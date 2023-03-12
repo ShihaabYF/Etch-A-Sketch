@@ -7,7 +7,7 @@ let subGridContainer = [];//change the name to tallBoxesHolder: it is a more des
 
 function drawBoxes(boxNumbersX = 16)
 {
-    /* freeUp the array */
+    /* freeUp the array: remove the "old-tallContainers" */
     subGridContainer.splice(0, (subGridContainer.length));
 
     for(let i = 0; i < boxNumbersX; ++i)
@@ -71,3 +71,112 @@ function removeTallBoxes()
     }
 }
 /*.......................................................*/
+
+/* for sketching; painting and erasing ..................*/
+let gridBoxClicksCount = 0;
+
+gridBoxesContainer.addEventListener('click', checkPaintStatus);
+
+let paintTruth = true;
+let eraseTruth = false;
+
+function checkPaintStatus()
+{
+    if(paintTruth === true)
+    {
+        paint();
+    }
+    else if(eraseTruth === true)
+    {
+        erase();
+    }
+
+}
+
+//paint: start
+function paint()
+{
+    const smallGridBoxes = document.querySelectorAll('.universal-container .grid-box .tall-container .tiny-box');
+    if(gridBoxClicksCount % 2 === 0)
+    {
+        ++gridBoxClicksCount;
+        for(let box of smallGridBoxes)
+        {
+            box.removeEventListener('mouseover', eraseBoxes);
+            box.addEventListener('mouseover', paintBoxes);
+        }
+    }
+    else if(gridBoxClicksCount % 2 === 1)
+    {
+        ++gridBoxClicksCount;
+        for(let box of smallGridBoxes)
+        {
+            box.removeEventListener('mouseover', eraseBoxes);
+            box.removeEventListener('mouseover', paintBoxes);
+        }
+    }
+
+}
+
+function paintBoxes()
+{
+    this.style.backgroundColor ='red';
+}
+// paint: end..................................................
+
+//erase: start .......................................
+function erase()
+{
+    const smallGridBoxes = document.querySelectorAll('.universal-container .grid-box .tall-container .tiny-box');
+    if(gridBoxClicksCount % 2 === 0)
+    {
+
+        ++gridBoxClicksCount;
+        for(let box of smallGridBoxes)
+        {
+            box.removeEventListener('mouseover', paintBoxes);
+            box.addEventListener('mouseover', eraseBoxes);
+        }
+    }
+    else if(gridBoxClicksCount % 2 === 1)
+    {
+        ++gridBoxClicksCount;
+        for(let box of smallGridBoxes)
+        {
+            box.removeEventListener('mouseover', paintBoxes);
+            box.removeEventListener('mouseover', eraseBoxes);
+        }
+    }
+}
+
+function eraseBoxes()
+{
+    this.style.backgroundColor ='white';
+}
+// erase: end..................................................
+
+/* paint and erase buttons ...................................*/
+//paint-button
+const paintBtn = document.querySelector('.paintBtn');
+paintBtn.addEventListener('click', paintBtnClicked);
+
+function paintBtnClicked()
+{
+    gridBoxClicksCount = 1;
+
+    paint();
+    paintTruth = true;
+    eraseTruth = false;
+}
+
+//erase-button
+const eraseBtn = document.querySelector('.eraseBtn');
+eraseBtn.addEventListener('click', eraseBtnClicked);
+function eraseBtnClicked()
+{
+    gridBoxClicksCount = 1;
+
+    erase();
+    paintTruth = false;
+    eraseTruth = true;
+}

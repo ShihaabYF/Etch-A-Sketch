@@ -128,4 +128,53 @@ html {
 }
 /*submit-button: end --------------------*/
 
+/*paint-button: start --------------------*/
+.menu .paintBtn{
+    color: white;
+    background-color: rgb(8, 136, 93);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    border: 1px solid white;
+    border-radius: 4px;
+    padding: 1px 4px;
+    cursor: pointer;
+}
+
+.menu .paintBtn:hover{
+    color: rgb(8, 136, 93);
+    background-color: white;
+}
+
+.menu .paintBtn:active{
+    background-color: antiquewhite;
+    border-color: rgb(8, 136, 93);
+
+}
+/*paint-button: end --------------------*/
+
+/*erase-button: start --------------------*/
+.menu .eraseBtn{
+    color: white;
+    background-color: rgb(158, 90, 2);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+    border: 1px solid white;
+    border-radius: 4px;
+    padding: 1px 4px;
+    cursor: pointer;
+}
+
+.menu .eraseBtn:hover{
+    color: rgb(158, 90, 2);
+    background-color: white;
+}
+
+.menu .eraseBtn:active{
+    background-color: antiquewhite;
+    border-color: rgb(158, 90, 2);
+
+}
+/*erase-button: end --------------------*/
+
+
 /*menu-part: end #################*/
