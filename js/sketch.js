@@ -3,21 +3,21 @@
 let gridBoxesContainer = document.querySelector('.universal-container .grid-box');
 
 //this array will store the boxes that will store the tiny-boxes"the final boxes form"
-let subGridContainer = [];//change the name to tallBoxesHolder: it is a more descriptive name
+let tallBoxesHolder = [];
 
 function drawBoxes(boxNumbersX = 16)
 {
     /* freeUp the array: remove the "old-tallContainers" */
-    subGridContainer.splice(0, (subGridContainer.length));
+    tallBoxesHolder.splice(0, (tallBoxesHolder.length));
 
     for(let i = 0; i < boxNumbersX; ++i)
     {
         let tallBox = document.createElement('div');
         tallBox.setAttribute('class', 'tall-container');
-        subGridContainer.push(tallBox);
+        tallBoxesHolder.push(tallBox);
     }
 
-    for(let tallBox of subGridContainer)
+    for(let tallBox of tallBoxesHolder)
     {
         for(let i = 0; i < boxNumbersX; ++i)
         {
@@ -27,7 +27,7 @@ function drawBoxes(boxNumbersX = 16)
         }
     }
 
-    for(let tallBox of subGridContainer)
+    for(let tallBox of tallBoxesHolder)
     {
         gridBoxesContainer.appendChild(tallBox);
     }
@@ -65,7 +65,7 @@ function removeTallBoxes()
 {
     //we only need to remove the tallBoxes and all the boxes 'tinyBoxes also' will ...
     //be removed, since the the tinyBoxes are contained in the tallBoxes 
-    for(let tallBox of subGridContainer)
+    for(let tallBox of tallBoxesHolder)
     {
         tallBox.remove();
     }
