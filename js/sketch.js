@@ -3,7 +3,7 @@
 let gridBoxesContainer = document.querySelector('.universal-container .grid-box');
 
 //this array will store the boxes that will store the tiny-boxes"the final boxes form"
-let subGridContainer = [];
+let subGridContainer = [];//change the name to tallBoxesHolder: it is a more descriptive name
 
 function drawBoxes(boxNumbersX = 16)
 {
@@ -37,3 +37,37 @@ function drawBoxes(boxNumbersX = 16)
 
 //initial call: when the page is loaded draw "16x16" grid-boxes
 drawBoxes();
+
+
+/* for the gridSizeSlider and what is related to it.....................*/
+//for the gridSizeSlider
+let gridSizeSlider = document.querySelector('#gridSizeSlider');
+let gridBoxSizeDisplay = document.querySelector('#rangeOutput');
+
+gridSizeSlider.addEventListener('input', displayData);
+function displayData()
+{
+    gridBoxSizeDisplay.textContent = `${this.value} x ${this.value}`;
+}
+
+//make number-of-boxes responsive to gridSizeSlider: '#gridSizeSlider'
+const submitBtn = document.querySelector('.submitBtn');
+submitBtn.addEventListener('click', redrawBoxes);
+let newBoxNumbers = 0;
+function redrawBoxes()
+{
+    removeTallBoxes();//it removes Everything since tinyBoxes are contained in the tallBoxes
+    newBoxNumbers = +(gridSizeSlider.value);
+    drawBoxes(newBoxNumbers);
+}
+
+function removeTallBoxes()
+{
+    //we only need to remove the tallBoxes and all the boxes 'tinyBoxes also' will be removed
+    //since the the tinyBoxes are contained in the tallBoxes 
+    for(let tallBox of subGridContainer)
+    {
+        tallBox.remove();
+    }
+}
+/*.......................................................*/
