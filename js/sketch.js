@@ -63,8 +63,8 @@ function redrawBoxes()
 
 function removeTallBoxes()
 {
-    //we only need to remove the tallBoxes and all the boxes 'tinyBoxes also' will be removed
-    //since the the tinyBoxes are contained in the tallBoxes 
+    //we only need to remove the tallBoxes and all the boxes 'tinyBoxes also' will ...
+    //be removed, since the the tinyBoxes are contained in the tallBoxes 
     for(let tallBox of subGridContainer)
     {
         tallBox.remove();
