@@ -193,3 +193,23 @@ function eraseBtnClicked()
     eraseBtn.classList.add('btnClicked');
     paintBtn.classList.add('btnNotClicked');
 }
+
+//add a keyListener to spaceButton,
+//when it is clicked it will switch between sketch buttons
+
+// add keyListener
+window.addEventListener('keydown', keyCheck);
+
+function keyCheck(e)
+{
+    if(e.keyCode === 32)
+    {
+        if(paintTruth === true)
+        {
+            eraseBtnClicked();
+        }
+        else {
+            paintBtnClicked();
+        }
+    }
+}
