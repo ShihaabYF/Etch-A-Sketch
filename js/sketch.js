@@ -213,3 +213,16 @@ function keyCheck(e)
         }
     }
 }
+
+//show/hideLines-button
+const showHideLinesBtn = document.querySelector('.menu .showHideLines');
+showHideLinesBtn.addEventListener('click', showHideLines);
+
+function showHideLines()
+{
+    const tinyBoxes = document.querySelectorAll('.universal-container .grid-box .tiny-box')
+    for(let tinyBox of tinyBoxes)
+    {
+        tinyBox.classList.toggle('remove-tiny-box-border');
+    }
+}

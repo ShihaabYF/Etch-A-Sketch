@@ -185,4 +185,30 @@ html {
     box-shadow: rgba(255, 0, 0, 0.3) 0px 5px 30px, rgba(255, 0, 0, 0.22) 0px 5px 5px;
 }
 
+
+/*show/hideLines-button: start --------------------*/
+.menu .showHideLines {
+    background-color: black;
+    color: white;
+    border: 0px;
+    font-size: large;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 2px 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-left: 15px;
+}
+.menu .showHideLines:hover {
+    color: black;
+    background-color: white;
+}
+.menu .showHideLines:active {
+    background-color: bisque;
+}
+
+.remove-tiny-box-border{
+    border: 0px;
+}
+/*show/hideLines-button: end --------------------*/
+
 /*menu-part: end #################*/
