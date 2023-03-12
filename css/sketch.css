@@ -61,7 +61,7 @@ html {
 /*slider*/
 /*slider:start ------------------------*/
 .slideContainer  {
-    width: 100%;
+    width: 190px;
     display: flex;
     column-gap: 20px;
 }
@@ -102,7 +102,7 @@ html {
 
 /*rangeOutput*/
 #rangeOutput {
-    width: 155px;
+    width: 70px;
     margin-left: 5px;
     text-align: center;
 }
