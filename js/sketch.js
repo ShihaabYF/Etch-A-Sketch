@@ -167,6 +167,13 @@ function paintBtnClicked()
     paint();
     paintTruth = true;
     eraseTruth = false;
+
+    eraseBtn.classList.remove('btnClicked');
+    paintBtn.classList.remove('btnNotClicked');
+
+
+    paintBtn.classList.add('btnClicked');
+    eraseBtn.classList.add('btnNotClicked');
 }
 
 //erase-button
@@ -179,4 +186,10 @@ function eraseBtnClicked()
     erase();
     paintTruth = false;
     eraseTruth = true;
+
+    paintBtn.classList.remove('btnClicked');
+    eraseBtn.classList.remove('btnNotClicked');
+
+    eraseBtn.classList.add('btnClicked');
+    paintBtn.classList.add('btnNotClicked');
 }

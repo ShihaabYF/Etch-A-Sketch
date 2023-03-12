@@ -176,5 +176,13 @@ html {
 }
 /*erase-button: end --------------------*/
 
+/*when paint-erase button are clicked*/
+.btnClicked {
+    box-shadow: rgba(0, 255, 0, 0.3) 0px 5px 30px, rgba(0, 255, 0, 0.22) 0px 5px 5px;
+}
+
+.btnNotClicked {
+    box-shadow: rgba(255, 0, 0, 0.3) 0px 5px 30px, rgba(255, 0, 0, 0.22) 0px 5px 5px;
+}
 
 /*menu-part: end #################*/
