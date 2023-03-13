@@ -128,8 +128,18 @@ html {
 }
 /*submit-button: end --------------------*/
 
+/*paint-erase icons*/
+.menu img {
+    width: 30px;
+    height: auto;
+    padding: 2px;
+}
+
 /*paint-button: start --------------------*/
 .menu .paintBtn{
+    display: flex;
+    align-items: center;
+
     color: white;
     background-color: rgb(8, 136, 93);
     font-family: 'Courier New', Courier, monospace;
@@ -154,6 +164,9 @@ html {
 
 /*erase-button: start --------------------*/
 .menu .eraseBtn{
+    display: flex;
+    align-items: center;
+
     color: white;
     background-color: rgb(158, 90, 2);
     font-family: 'Courier New', Courier, monospace;
