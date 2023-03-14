@@ -1,5 +1,7 @@
 'use strict'
 
+alert('Hi there, you can click spacebar to switch between paint-erase buttons');
+
 let gridBoxesContainer = document.querySelector('.universal-container .grid-box');
 
 //this array will store the boxes that will store the tiny-boxes"the final boxes form"
